@@ -19,10 +19,19 @@ int* inverter_lista(int* lista, int tamanho) {
 int main() {
     int lista[] = {1, 2, 3, 4, 5};
     int n = sizeof(lista) / sizeof(lista[0]);
+
+    // PRINTAR LISTA:
+    std::cout << std::endl;
+    std::cout << "Lista original: " << " ";
+    for (int i = 0; i < n; i++) {
+        std::cout << lista[i] << " ";
+    }
+
     int* lista_invertida = inverter_lista(lista, n);
 
     // PRINTAR LISTA INVERTIDA:
     std::cout << std::endl;
+    std::cout << "Lista invertida:" << " ";
     for (int i = 0; i < n; i++) {
         std::cout << lista_invertida[i] << " ";
     }
