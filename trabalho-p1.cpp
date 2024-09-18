@@ -34,13 +34,18 @@ Node* newNode(int data) {
 // INSERIR NO NA ARVORE:
 Node* insert(Node* node, int data) {
     /*
+    Verifica se o nó é nulo, se sim, cria o nó e coloca ele como a raiz da arvore.
+    Caso contrario, verifica se o valor é menor que o nó, se sim, inserir a esquerda utilizando recursão.
+    Caso o valor seja maior que o nó, insere a direita utilizando recursão.
+    No fim, retorna o nó.
     */
     if (node == NULL) {
         return newNode(data);
     }
     if (data < node->data) {
         node->left = insert(node->left, data);
-    } else if (data > node->data) {
+    }
+    else if (data > node->data) {
         node->right = insert(node->right, data);
     }
     return node;
@@ -49,6 +54,7 @@ Node* insert(Node* node, int data) {
 // IMPRIMIR ARVORE EM ORDEM CRESCENTE:
 void sortedPrint(Node* root) {
     /*
+    Printa primeiro o valor da esquerda, depois o valor do nó, e por último o da direita, em cada um dos nós de forma recursiva.
     */
     if (root != NULL) {
         sortedPrint(root->left);
@@ -60,7 +66,7 @@ void sortedPrint(Node* root) {
 // FUNCAO PRINCIPAL:
 int main() {
     /*
-    Nesse exmeplo de aplicacao de arvore binaria em C++ vamos criar a seguinte arvore:
+    Nesse exmeplo de aplicacao de arvore binaria em C++, vamos criar a seguinte arvore:
            10
           /  \
          /    \
