@@ -21,7 +21,7 @@ struct Node {
 // CRIAR NOVO NO:
 Node* newNode(int data) {
     /*
-    A cada no que for criado é necessario instanciar a estrutura do no, atribuir o valor do dado passado a uma variavel, e atribuir para os dois ponteiros do no o valor nulo, pois o no ainda nao possui filhos.
+    A cada nó que for criado é necessario instanciar a estrutura do no, atribuir o valor do dado passado a uma variavel, e atribuir para os dois ponteiros do no o valor nulo, pois o no ainda nao possui filhos.
     No final e retornado o proprio no construido.
     */
     Node* node = new Node();
@@ -67,17 +67,18 @@ void sortedPrint(Node* root) {
 int main() {
     /*
     Nesse exmeplo de aplicacao de arvore binaria em C++, vamos criar a seguinte arvore:
-           10
-          /  \
+
+           10             <- Nível 0
+          /  \            OBS: Raís não tem pai.
          /    \
         /      \
-       5        15
-      / \      /  \
+       5        15        <- Nível 1
+      / \      /  \       OBS: Todo nó pode possuir até 2 filhos.
      /   \    /    \
-    1     7 13      16
+    1     7 13      16    <- Nível 2
             /
            /
-         11
+         11               <- Nível 3
 
     E em seguida imprimir os valores da arvore lado a lado em ordem crescente.
     */
